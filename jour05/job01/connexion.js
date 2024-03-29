@@ -13,8 +13,8 @@ document.getElementById('connexionForm').addEventListener('submit', function(eve
     // Validation du mot de passe (peut être étendue selon les critères)
     const passwordInput = document.getElementById('password');
     const passwordError = document.getElementById('passwordError');
-    if (passwordInput.value.length < 6) {
-        passwordError.textContent = 'Le mot de passe doit contenir au moins 6 caractères.';
+    if (passwordInput.value.length < 3) {
+        passwordError.textContent = 'Le mot de passe doit contenir au moins 3 caractères.';
         return;
     } else {
         passwordError.textContent = '';
