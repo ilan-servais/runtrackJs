@@ -1,16 +1,25 @@
-.container {
+#rainbow {
     display: flex;
+    justify-content: space-between;
     margin-bottom: 20px;
 }
 
 .rainbow-img {
     width: 100px;
-    height: 100px;
-    margin: 5px;
+    height: auto;
+    cursor: pointer; /* Ajout du style curseur pour indiquer qu'il est cliquable */
+}
+
+/* Style pour la sélection visuelle des images */
+.rainbow-img.selected {
+    border: 2px solid blue; /* Bordure bleue autour de l'image sélectionnée */
+}
+
+#shuffleButton {
+    display: block;
+    margin-bottom: 10px;
 }
 
 #message {
-    font-size: 25px;
-    text-align: center;
     font-weight: bold;
 }
