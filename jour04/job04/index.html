@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informations Utilisateurs</title>
+</head>
+<body>
+    <form id="addUserForm">
+        <label for="userId">ID:</label>
+        <input type="text" id="userId" name="userId">
+        <br>
+        <label for="userNom">Nom:</label>
+        <input type="text" id="userNom" name="userNom">
+        <br>
+        <label for="userPrenom">Prénom:</label>
+        <input type="text" id="userPrenom" name="userPrenom">
+        <br>
+        <label for="userEmail">Email:</label>
+        <input type="email" id="userEmail" name="userEmail">
+        <br>
+        <input type="button" value="Ajouter Utilisateur" onclick="ajouterUtilisateur()">
+    </form>
+
+    <table id="userTable" border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Les informations des utilisateurs seront affichées ici -->
+        </tbody>
+    </table>
+    
+    <button id="updateButton" onclick="updateUserTable()">Update</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
