@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de la fonction jsonValueKey()</title>
+</head>
+<body>
+
+    <script src="script.js"></script>
+    <script>
+        // Exemple d'utilisation de la fonction jsonValueKey()
+        const jsonString = `{
+            "name": "La Plateforme_",
+            "adresse": "8 rue d'hozier",
+            "city": "Marseille",
+            "nb_staff": "11",
+            "creation": "2019"
+        }`;
+
+        const key = "city";
+        const value = jsonValueKey(jsonString, key);
+        console.log(value); // Affiche "Marseille"
+    </script>
+</body>
+</html>
