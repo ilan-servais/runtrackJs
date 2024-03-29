@@ -1,25 +1,19 @@
-#rainbow {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.rainbow-img {
+.container {
+    text-align: center;
+  }
+  
+  #imageContainer {
+    margin-top: 20px;
+  }
+  
+  .draggable {
     width: 100px;
-    height: auto;
-    cursor: pointer; /* Ajout du style curseur pour indiquer qu'il est cliquable */
-}
-
-/* Style pour la sélection visuelle des images */
-.rainbow-img.selected {
-    border: 2px solid blue; /* Bordure bleue autour de l'image sélectionnée */
-}
-
-#shuffleButton {
-    display: block;
-    margin-bottom: 10px;
-}
-
-#message {
+    height: 100px;
+    margin: 5px;
+  }
+  
+  #message {
+    margin-top: 20px;
     font-weight: bold;
-}
+  }
+  

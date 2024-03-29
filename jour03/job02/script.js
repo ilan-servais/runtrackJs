@@ -1,55 +1,65 @@
-$(document).ready(function() {
-    // Fonction pour mélanger les images de l'arc-en-ciel
-    function shuffleRainbow() {
-        var images = $('#rainbow').children('.rainbow-img');
-        for (var i = 0; i < images.length; i++) {
-            var randomIndex = Math.floor(Math.random() * images.length);
-            var temp = images[i].src;
-            images[i].src = images[randomIndex].src;
-            images[randomIndex].src = temp;
-        }
+// Function to shuffle array elements
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
     }
-
-    // Vérifier si les images sont dans le bon ordre
-    function checkOrder() {
-        var correctOrder = true;
-        $('#container').children('.rainbow-img').each(function(index) {
-            if ($(this).attr('alt') !== 'Arc ' + (index + 1)) {
-                correctOrder = false;
-                return false; // Sortir de la boucle each dès qu'une image est mal placée
-            }
-        });
-        return correctOrder;
+    return array;
+  }
+  
+  // Function to check if images are in correct order
+  function checkOrder() {
+    const images = document.querySelectorAll('.draggable');
+    let correctOrder = true;
+    images.forEach((image, index) => {
+      if (parseInt(image.id.slice(3)) !== index + 1) {
+        correctOrder = false;
+      }
+    });
+    return correctOrder;
+  }
+  
+  // Function to handle drag and drop
+  function allowDrop(ev) {
+    ev.preventDefault();
+  }
+  
+  function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+  }
+  
+  function drop(ev) {
+    ev.preventDefault();
+    const data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+    if (checkOrder()) {
+      document.getElementById('message').innerText = "Vous avez gagné";
+      document.getElementById('message').style.color = "green";
+    } else {
+      document.getElementById('message').innerText = "Vous avez perdu";
+      document.getElementById('message').style.color = "red";
     }
-
-    // Mélanger les images lorsqu'on clique sur le bouton "Mélanger"
-    $('#shuffleButton').on('click', function() {
-        shuffleRainbow();
-        $('#message').empty(); // Vider le message après chaque mélange
+  }
+  
+  
+  // Function to shuffle images
+  function shuffleImages() {
+    const imagesContainer = document.getElementById('imageContainer');
+    const images = Array.from(imagesContainer.children);
+    const shuffledImages = shuffleArray(images);
+    imagesContainer.innerHTML = '';
+    shuffledImages.forEach(image => {
+      imagesContainer.appendChild(image);
     });
-
-    // Permettre le déplacement des images dans le conteneur
-    $('.rainbow-img').on('click', function() {
-        var clickedImg = $(this);
-        var container = $('#container');
-
-        // Ajouter l'image dans le conteneur si elle n'est pas déjà dedans
-        if (!clickedImg.parent().is(container)) {
-            container.append(clickedImg.clone());
-        } else { // Retirer l'image du conteneur si elle est déjà dedans
-            clickedImg.remove();
-        }
-
-        // Vérifier si toutes les images sont dans le conteneur
-        if ($('#container').children('.rainbow-img').length === 6) {
-            // Si toutes les images sont dans le conteneur, vérifier si elles sont dans le bon ordre
-            if (checkOrder()) {
-                $('#message').text('Vous avez gagné').css('color', 'green');
-            } else {
-                $('#message').text('Vous avez perdu').css('color', 'red');
-            }
-        } else {
-            $('#message').empty(); // Vider le message si toutes les images ne sont pas dans le conteneur
-        }
-    });
-});
+    document.getElementById('message').innerText = "";
+  }
+  
+  // Event listeners
+  document.getElementById('shuffleButton').addEventListener('click', shuffleImages);
+  document.querySelectorAll('.draggable').forEach(item => {
+    item.addEventListener('dragstart', drag);
+  });
+  document.getElementById('imageContainer').addEventListener('drop', drop);
+  document.getElementById('imageContainer').addEventListener('dragover', allowDrop);
+  
+  

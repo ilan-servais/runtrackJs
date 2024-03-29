@@ -1,25 +1,26 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arc-en-ciel</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rainbow Puzzle Game</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="rainbow">
-        <img src="arc1.png" alt="Arc 1" class="rainbow-img">
-        <img src="arc2.png" alt="Arc 2" class="rainbow-img">
-        <img src="arc3.png" alt="Arc 3" class="rainbow-img">
-        <img src="arc4.png" alt="Arc 4" class="rainbow-img">
-        <img src="arc5.png" alt="Arc 5" class="rainbow-img">
-        <img src="arc6.png" alt="Arc 6" class="rainbow-img">
+  <div class="container">
+    <h1>Rainbow Puzzle Game</h1>
+    <div id="imageContainer">
+      <img src="arc1.png" id="img1" class="draggable" draggable="true" ondragstart="drag(event)">
+      <img src="arc2.png" id="img2" class="draggable" draggable="true" ondragstart="drag(event)">
+      <img src="arc3.png" id="img3" class="draggable" draggable="true" ondragstart="drag(event)">
+      <img src="arc4.png" id="img4" class="draggable" draggable="true" ondragstart="drag(event)">
+      <img src="arc5.png" id="img5" class="draggable" draggable="true" ondragstart="drag(event)">
+      <img src="arc6.png" id="img6" class="draggable" draggable="true" ondragstart="drag(event)">
     </div>
-    <div id="container"></div> <!-- Conteneur vide où les images doivent être placées dans le bon ordre -->
-    <button id="shuffleButton">Mélanger</button>
+    <button id="shuffleButton">Shuffle Images</button>
     <div id="message"></div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
-    <script src="script.js" defer></script>
+  </div>
+  
+  <script src="script.js"></script>
 </body>
 </html>
