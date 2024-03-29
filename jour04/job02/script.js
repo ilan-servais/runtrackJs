@@ -1,27 +1,31 @@
-// Fonction pour obtenir la valeur associée à une clé dans une chaîne JSON
 function jsonValueKey(jsonString, key) {
+    // Parse la chaîne JSON en objet JavaScript
     const jsonObject = JSON.parse(jsonString);
-    if (jsonObject.hasOwnProperty(key)) {
+    
+    // Vérifie si la clé existe dans l'objet JSON
+    if (key in jsonObject) {
+        // Retourne la valeur associée à la clé
         return jsonObject[key];
     } else {
-        return "";
+        // Si la clé n'existe pas, retourne undefined
+        return undefined;
     }
 }
 
-// Valeur JSON par défaut pour les tests
-const defaultJSONString = `{
+// Exemple d'utilisation de la fonction
+const jsonString = `{
     "name": "La Plateforme_",
     "adresse": "8 rue d'hozier",
     "city": "Marseille",
     "nb_staff": "11",
     "creation": "2019"
 }`;
+const key = "city";
+const result = jsonValueKey(jsonString, key);
+console.log(result); // Affiche "Marseille"
 
-// Clé par défaut pour les tests
-const defaultKey = "city";
+// Sélectionne l'élément HTML avec l'identifiant "result"
+const resultElement = document.getElementById("result");
 
-// Appel de la fonction jsonValueKey avec les valeurs par défaut
-const defaultValue = jsonValueKey(defaultJSONString, defaultKey);
-
-// Affichage du résultat dans la console pour test
-console.log("Valeur associée à la clé '" + defaultKey + "' : " + defaultValue);
+// Affiche le résultat dans l'élément HTML
+resultElement.innerHTML = "Ville : " + result;
