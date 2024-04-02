@@ -58,14 +58,18 @@
             </div>
           </div>
           
-          <div class="col-md-8 mb-4">
+          <div class="col-lg-8 mb-4">
             <div class="jumbotron" id="jumbotron-content">
                 <h1 class="display-4">Bonjour, monde!</h1>
-                <p class="lead" id="jumbotron-text">Il existe plusieurs visions du terme :<br>le monde est la matière, l'espace et les phénomènes qui nous sont accessibles par les sens, l'expérience ou la raison.<br>Le sens le plus courant désigne notre planète, la Terre, avec ses habitants, et son environnement plus ou moins naturel.</p>
+                    <p class="lead" id="jumbotron-text">Il existe plusieurs visions du terme :<br>le monde est la matière, l'espace et les phénomènes qui nous sont accessibles par les sens, l'expérience ou la raison.<br>Le sens le plus courant désigne notre planète, la Terre, avec ses habitants, et son environnement plus ou moins naturel.</p>
                 <hr class="my-4">
-                <p>Le sens étendu désigne l'univers dans son ensemble.</p>
-                <a class="btn btn-primary btn-lg" href="#" role="button" id="reboot-button">Rebooter le Monde</a>
-            </div>
+                    <p>Le sens étendu désigne l'univers dans son ensemble.</p>
+                    <a class="btn btn-danger text-white" href="#" role="button" id="reboot-button">Rebooter le Monde</a>
+                    <button class="btn btn-light text-info" type="button" disabled="">
+                        <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                        <span class="visually-hidden" role="status">Loading...</span>
+                    </button>
+                 </div>
             
             <nav aria-label="Page navigation">
               <ul class="pagination">
@@ -123,12 +127,20 @@
         </div>
     </div>
 
-    
+    <div class="col-12">
+        <label for="username" class="form-label">Recevez votre copie gratuite d'internet 2!</label>
+        <div class="input-group has-validation">
+          <span class="input-group-text">@</span>
+          <input type="text" class="form-control" id="login" placeholder="Login" required="">
+        <div class="invalid-feedback">
+            Your username is required.
+          </div>
+        </div>
+      </div>
         
-
+      <input type="password" class="form-control" id="password" placeholder="Mot de Passe">
 
     </main>
-
 
 </body>
 <script src="script.js"></script>
