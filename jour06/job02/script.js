@@ -223,38 +223,25 @@ progressBackwardBtn.addEventListener('click', () => {
     })
   })()
   
-
   document.addEventListener("DOMContentLoaded", function() {
-    // Variable pour stocker l'état des touches pressées
-    let keysPressed = [];
-
-    // Fonction pour vérifier si les touches D, G et C ont été pressées dans l'ordre
-    function checkKeysPressed() {
-        return keysPressed.join('') === 'DGC';
-    }
-
-    // Fonction pour afficher la modale récapitulative lorsque les touches sont pressées dans l'ordre
-    function showModal() {
-        if (checkKeysPressed()) {
-            // Afficher la modale récapitulative
-            alert("Modale récapitulative : \n" +
-                "Email : " + document.getElementById('exampleInputEmail1').value + "\n" +
-                "Mot de passe : " + document.getElementById('exampleInputPassword1').value);
-        }
-    }
-
-    // Ecouter l'événement de pression des touches
+    let sequence = ""; // Variable pour stocker la séquence de touches pressées
+    
+    // Ecouter l'événement keydown pour détecter les touches pressées
     document.addEventListener("keydown", function(event) {
-        // Ajouter la touche pressée à la liste des touches
-        keysPressed.push(event.key.toUpperCase());
-
-        // Vérifier si les touches D, G et C ont été pressées dans l'ordre
-        showModal();
-
-        // Réinitialiser les touches pressées si une autre touche est pressée
-        if (!checkKeysPressed()) {
-            keysPressed = [];
+        // Ajouter la touche pressée à la séquence
+        sequence += event.key.toUpperCase(); // Convertir la touche en majuscule pour correspondre à la séquence souhaitée
+        
+        // Vérifier si la séquence contient la séquence souhaitée (DGC)
+        if (sequence === "DGC") {
+            // Afficher la modale récapitulative
+            let modal = new bootstrap.Modal(document.getElementById('modalRecapitulative'));
+            modal.show();
+            
+            // Réinitialiser la séquence pour permettre de détecter une nouvelle séquence
+            sequence = "";
+        } else if (!sequence.includes("D")) {
+            // Réinitialiser la séquence si une touche autre que D est pressée
+            sequence = "";
         }
     });
 });
-
