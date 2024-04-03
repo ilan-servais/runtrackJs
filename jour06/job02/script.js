@@ -1,3 +1,33 @@
+document.addEventListener("DOMContentLoaded", function() {
+  // Fonction pour générer une couleur aléatoire au format hexadécimal
+  function getRandomColor() {
+      return '#' + Math.floor(Math.random() * 16777215).toString(16);
+  }
+
+  // Ecouter l'événement de clic sur le bouton de soumission du formulaire
+  document.querySelector('button[type="submit"]').addEventListener('click', function(event) {
+      // Empêcher le comportement par défaut du formulaire
+      event.preventDefault();
+
+      // Récupérer la valeur de l'email et du mot de passe
+      let emailValue = document.getElementById('exampleInputEmail').value.trim();
+      let passwordValue = document.getElementById('exampleInputPassword1').value.trim();
+
+      // Vérifier si l'email et le mot de passe ne sont pas vides
+      if (emailValue !== '' && passwordValue !== '') {
+          // Changer aléatoirement la couleur du spinner de la page principale du jumbotron
+          let spinner = document.querySelector('.spinner-border');
+          spinner.style.color = getRandomColor();
+      } else {
+          // Afficher un message d'erreur si l'email ou le mot de passe est vide
+          alert('Veuillez remplir tous les champs du formulaire.');
+      }
+  });
+});
+
+
+
+
 // Modal pour traiter l'achat du papillon
 const btnConfirmerAchat = document.getElementById('btnConfirmerAchat');
 
@@ -193,3 +223,38 @@ progressBackwardBtn.addEventListener('click', () => {
     })
   })()
   
+
+  document.addEventListener("DOMContentLoaded", function() {
+    // Variable pour stocker l'état des touches pressées
+    let keysPressed = [];
+
+    // Fonction pour vérifier si les touches D, G et C ont été pressées dans l'ordre
+    function checkKeysPressed() {
+        return keysPressed.join('') === 'DGC';
+    }
+
+    // Fonction pour afficher la modale récapitulative lorsque les touches sont pressées dans l'ordre
+    function showModal() {
+        if (checkKeysPressed()) {
+            // Afficher la modale récapitulative
+            alert("Modale récapitulative : \n" +
+                "Email : " + document.getElementById('exampleInputEmail1').value + "\n" +
+                "Mot de passe : " + document.getElementById('exampleInputPassword1').value);
+        }
+    }
+
+    // Ecouter l'événement de pression des touches
+    document.addEventListener("keydown", function(event) {
+        // Ajouter la touche pressée à la liste des touches
+        keysPressed.push(event.key.toUpperCase());
+
+        // Vérifier si les touches D, G et C ont été pressées dans l'ordre
+        showModal();
+
+        // Réinitialiser les touches pressées si une autre touche est pressée
+        if (!checkKeysPressed()) {
+            keysPressed = [];
+        }
+    });
+});
+
