@@ -23,10 +23,30 @@ document.addEventListener("DOMContentLoaded", function() {
           alert('Veuillez remplir tous les champs du formulaire.');
       }
   });
+
+  // Ajoutez le code que je vous ai fourni ici
+
+  let sequence = ""; // Variable pour stocker la séquence de touches pressées
+    
+  // Ecouter l'événement keydown pour détecter les touches pressées
+  document.addEventListener("keydown", function(event) {
+      // Ajouter la touche pressée à la séquence
+      sequence += event.key.toUpperCase(); // Convertir la touche en majuscule pour correspondre à la séquence souhaitée
+      
+      // Vérifier si la séquence contient la séquence souhaitée (DGC)
+      if (sequence === "DGC") {
+          // Afficher la modale récapitulative
+          let modal = new bootstrap.Modal(document.getElementById('modalRecapitulative'));
+          modal.show();
+          
+          // Réinitialiser la séquence pour permettre de détecter une nouvelle séquence
+          sequence = "";
+      } else if (!sequence.includes("D")) {
+          // Réinitialiser la séquence si une touche autre que D est pressée
+          sequence = "";
+      }
+  });
 });
-
-
-
 
 // Modal pour traiter l'achat du papillon
 const btnConfirmerAchat = document.getElementById('btnConfirmerAchat');
@@ -223,25 +243,4 @@ progressBackwardBtn.addEventListener('click', () => {
     })
   })()
   
-  document.addEventListener("DOMContentLoaded", function() {
-    let sequence = ""; // Variable pour stocker la séquence de touches pressées
-    
-    // Ecouter l'événement keydown pour détecter les touches pressées
-    document.addEventListener("keydown", function(event) {
-        // Ajouter la touche pressée à la séquence
-        sequence += event.key.toUpperCase(); // Convertir la touche en majuscule pour correspondre à la séquence souhaitée
-        
-        // Vérifier si la séquence contient la séquence souhaitée (DGC)
-        if (sequence === "DGC") {
-            // Afficher la modale récapitulative
-            let modal = new bootstrap.Modal(document.getElementById('modalRecapitulative'));
-            modal.show();
-            
-            // Réinitialiser la séquence pour permettre de détecter une nouvelle séquence
-            sequence = "";
-        } else if (!sequence.includes("D")) {
-            // Réinitialiser la séquence si une touche autre que D est pressée
-            sequence = "";
-        }
-    });
-});
+
