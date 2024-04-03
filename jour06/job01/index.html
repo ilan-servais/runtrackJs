@@ -65,10 +65,9 @@
                 <hr class="my-4">
                     <p>Le sens étendu désigne l'univers dans son ensemble.</p>
                     <a class="btn btn-danger text-white" href="#" role="button" id="reboot-button">Rebooter le Monde</a>
-                    <button class="btn btn-light text-info" type="button" disabled="">
-                        <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
-                        <span class="visually-hidden" role="status">Loading...</span>
-                    </button>
+                    <div class="spinner-border text-primary" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
                  </div>
             
             <nav aria-label="Page navigation">
@@ -111,37 +110,70 @@
         <!-- Boutons de progression -->
         <div class="d-flex justify-content-between align-items-center">
             <!-- Flèche gauche pour régresser la barre de progression -->
-            <button type="button" class="btn btn-secondary me-2" id="progress-backward-btn">
-                <i class="bi bi-arrow-left"></i>
+            <button type="button" id="progress-backward-btn">
+                <i class="bi bi-arrow-bar-left"></i>
             </button>
 
             <!-- Barre de progression Bootstrap -->
-            <div class="progress progress-custom mx-auto">
+            <div class="progress progress-custom">
                 <div id="progress-bar" class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
 
             <!-- Flèche droite pour progresser la barre de progression -->
-            <button type="button" class="btn btn-secondary ms-2" id="progress-forward-btn">
-                <i class="bi bi-arrow-right"></i>
+            <button type="button" id="progress-forward-btn">
+                <i class="bi bi-arrow-bar-right"></i>
             </button>
         </div>
     </div>
 
-    <div class="col-12">
-        <label for="username" class="form-label">Recevez votre copie gratuite d'internet 2!</label>
-        <div class="input-group has-validation">
-          <span class="input-group-text">@</span>
-          <input type="text" class="form-control" id="login" placeholder="Login" required="">
-        <div class="invalid-feedback">
-            Your username is required.
-          </div>
-        </div>
+
+            <!-- Form gauche -->
+
+    <label for="basic-url" class="form-label">Recevez votre copie gratuite d'internet 2!</label>
+
+    <div class="bd-example m-0 border-0">
+    
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">@</span>
+        <input type="text" class="form-control" placeholder="Login" aria-label="Login" aria-describedby="basic-addon1">
       </div>
-        
-      <input type="password" class="form-control" id="password" placeholder="Mot de Passe">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Mot de Passe" aria-label="Mot de Passe" aria-describedby="basic-addon2">
+        <span class="input-group-text" id="basic-addon2">@example.com</span>
+      </div>
+      
+      <label for="basic-url" class="form-label">URL des Internets 2 et 2.1 Beta</label>
 
-    </main>
+      <div class="input-group mb-3">
+        <span class="input-group-text">DogeCoin</span>
+          <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+        <span class="input-group-text">.00</span>
+      </div>
+      <div class="input-group">
+        <span class="input-group-text">https://l33t.lptf/dkwb/berlusconimkt/</span>
+        <textarea class="form-control" aria-label="textarea"></textarea>
+      </div>
+    </div>
+            <!-- Form droite -->
 
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</main>
 </body>
 <script src="script.js"></script>
 </html>
