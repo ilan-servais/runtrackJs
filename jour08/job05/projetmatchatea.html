@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Métadonnées -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Projet MatchaTea | Ilan Servais</title>
+    <meta property="og:title" content="Projets MatchaTea | Ilan Servais">
+    <meta property="og:locale" content="fr">
+    <meta name="description" content="Bachelor Concepteur développeur d'applications RNCP Niv.6 - BAC+3 | Disponible pour une alternance de 2 ans à partir de septembre 2024 | Passionné par le Web et le Gaming | Aspirant développeur Full Stack">
+    <link rel="icon" type="image/png" href="https://ilan-servais.students-laplateforme.io/mon-cv/index.html">
+    <meta name="theme-color" content="#5540af">
+    <meta property="og:site_name" content="Homepage | Ilan Servais">
+    <meta property="og:image" content="assets/img/social.jpg">
+    <!-- Préchargement des polices -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap">
+    <!-- Chargement des polices -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap">
+    <!-- Chargement des icônes -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css">
+    <!-- Styles CSS -->
+    <link rel="stylesheet" media="screen" href="assets/styles/main.min.css" crossorigin="anonymous">
+    <!-- Chargement des scripts -->
+    <script defer src="https://unpkg.com/@alpine-collective/toolkit@1.0.0/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body :class="{ 'overflow-hidden max-h-screen': mobileMenu }" class="relative" x-data="{ mobileMenu: false }">
+  <div id="main" class="relative">
+      <div x-data="{
+          triggerNavItem(id) {
+              $scroll(id)
+          },
+          triggerMobileNavItem(id) {
+              mobileMenu = false;
+              this.triggerNavItem(id)
+          }
+      }">
+  <div class="w-full z-50 top-0 py-3 sm:py-5  bg-primary ">
+  <div class="container flex items-center justify-between">
+    <div>
+      <a href="https://ilan-servais.students-laplateforme.io/mon-cv/index.html">
+        <img src="assets/img/logo.svg" class="w-24 lg:w-48" alt="logo image" />
+      </a>
+    </div>
+    <div class="hidden lg:block">
+      <ul class="flex items-center">
+        <li class="group pl-6">
+          
+          <a
+            href="index.html#apropos"
+            class="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white"
+            >À PROPOS</a
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
+          ></span>
+        </li>
+        
+        <li class="group pl-6">
+          
+          <a
+            href="index.html#services"
+            class="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white"
+            >Services</a
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
+          ></span>
+        </li>
+        
+        <li class="group pl-6">
+          
+          <a
+            href="index.html#portfolio"
+            class="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white"
+            >Portfolio</a
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
+          ></span>
+        </li>
+        
+        <li class="group pl-6">
+          
+          <a
+            href="index.html#projets"
+            class="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white"
+            >Projets</a
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
+          ></span>
+        </li>
+        
+        <li class="group pl-6">
+          
+          <a
+            href="index.html#travail"
+            class="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white"
+            >travail</a
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
+          ></span>
+        </li>
+        
+        <li class="group pl-6">
+          
+          <a
+            href="index.html#statistiques"
+            class="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white"
+            >statistiques</a
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
+          ></span>
+        </li>
+                
+        <li class="group pl-6">
+          
+          <a
+            href="index.html#contact"
+            class="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white"
+            >Contact</a
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
+          ></span>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="block lg:hidden">
+      <button @click="mobileMenu = true">
+        <i class="bx bx-menu text-4xl text-white"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div
+  class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden"
+  :class="{ 'opacity-100 pointer-events-auto': mobileMenu }"
+>
+  <div
+    class="absolute right-0 min-h-screen w-2/3 bg-primary py-4 px-8 shadow md:w-1/3"
+  >
+    <button
+      class="absolute top-0 right-0 mt-4 mr-4"
+      @click="mobileMenu = false"
+    >
+      <img src="assets/img/icon-close.svg" class="h-10 w-auto" alt="" />
+    </button>
+
+    <ul class="mt-8 flex flex-col">
+      
+      <li class="py-2">
+        
+        <a
+          href="index.html#apropos"
+          class="pt-0.5 font-header font-semibold uppercase text-white"
+          >À PROPOS</a
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <a
+          href="index.html#services"
+          class="pt-0.5 font-header font-semibold uppercase text-white"
+          >Services</a
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <a
+          href="index.html#portfolio"
+          class="pt-0.5 font-header font-semibold uppercase text-white"
+          >Portfolio</a
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <a
+          href="index.html#projets"
+          class="pt-0.5 font-header font-semibold uppercase text-white"
+          >Projets</a
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <a
+          href="index.html#travail"
+          class="pt-0.5 font-header font-semibold uppercase text-white"
+          >travail</a
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <a
+          href="index.html#statistiques"
+          class="pt-0.5 font-header font-semibold uppercase text-white"
+          >statistiques</a
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <a
+          href="index.html#contact"
+          class="pt-0.5 font-header font-semibold uppercase text-white"
+          >Contact</a
+        >
+        
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+      <div><div class="container py-6 md:py-10">
+  <div class="mx-auto max-w-4xl">
+    <div class="">
+      <h1
+        class="pt-5 font-body text-3xl font-semibold text-primary sm:text-4xl md:text-5xl xl:text-6xl"
+      >
+      Projet d'école · MatchaTea
+      </h1>
+      <div class="flex items-center pt-5 md:pt-10">
+        <div>
+          <img
+            src="assets/img/moi2.webp"
+            class="h-16 w-21 rounded-full border-2 border-grey-70 shadow"
+            alt="author image"
+          />
+        </div>
+        <div class="pl-5">
+          <span class="block font-body text-xl font-bold text-black-10"
+            >Par Ilan Servais, Abdelmoula Tayai & Antoiss Mbae</span
+          >
+          <span class="block pt-1 font-body text-xl font-bold text-black-30"
+            >18 Mars, 2024</span
+          >
+        </div>
+      </div>
+    </div>
+    <!-- logo -->
+    <img src="assets/img/icons8-thé-matcha-100.png" alt="client logo" class="mx-auto block h-24 w-auto">
+    <!-- Contexte -->
+    <div class="prose max-w-none pt-8 text-black"><h2 id="textes">Contexte :</h2>
+      <ul>
+        <li>Durée : 5 jours</li>
+        <li>Équipe : 3 personnes</li>
+        <li>Objectif : Maîtrise de HTML et CSS</li>
+      </ul>
+      <h3 id="textes-1">Contribution :</h3>
+        <p>J'ai dirigé la création du design sur Trello et élaboré la charte graphique. En tant que responsable de la création et du stylisme des cinq pages HTML, ainsi que de la mise en place du CSS et des éléments de design (header, footer, sidenav), j'ai contribué à façonner l'aspect visuel du projet tout en respectant les directives du projet, qui demandaient d'avoir seulement qu'une page .css par personne avec un minimum de 2 pages html.</p>
+      <h3 id="textes-1">Réussites :</h3>
+        <p>J'ai mis l'accent sur l'organisation et la clarté du code, en veillant à sa lisibilité et à sa facilité de maintenance. En fournissant des commentaires et une documentation détaillée, j'ai contribué à rendre le code plus compréhensible pour les autres membres de l'équipe et pour toute personne amenée à le modifier à l'avenir.</p>
+      <h3 id="textes-1">Difficultés rencontrées :</h3>
+        <p>Malheureusement la collaboration a été limitée, retardant le projet dans sa réalisation. Un manque de communication a entraîné une charge de travail imprévue au dernier moment, nécessitant un effort supplémentaire pour finaliser le projet dans l'urgence.</p>
+    </div>
+    <!-- Lien pr -->
+    <div class="flex pt-10">
+      <a
+        href="https://github.com/ilan-servais/matchaTea/tree/main/html"
+        class="rounded-xl bg-primary px-4 py-1 font-body font-bold text-white hover:bg-grey-20"
+        >HTML5</a
+      >
+      <a
+        href="https://github.com/ilan-servais/matchaTea/blob/main/css/matcha3.css"
+        class="ml-2 block rounded-xl bg-primary px-4 py-1 font-body font-bold text-white hover:bg-grey-20"
+        >CSS</a
+      >
+      <a
+      href="https://zupimages.net/viewer.php?id=24/14/iibb.png"
+      class="ml-2 block rounded-xl bg-primary px-4 py-1 font-body font-bold text-white hover:bg-grey-20"
+      >Trello</a
+      >
+      <a
+      href="https://zupimages.net/viewer.php?id=24/14/jx3z.png"
+      class="ml-2 block rounded-xl bg-primary px-4 py-1 font-body font-bold text-white hover:bg-grey-20"
+      >Figma</a
+      >
+    </div>
+
+<!-- image + lien matchatea -->
+    <div class="container py-16 md:py-20" id="portfolio">
+      <div class="mx-auto grid w-full grid-cols-1 gap-8 pt-12 sm:w-3/4 md:gap-10 lg:w-full lg:grid-cols-2">
+        <a href="https://ilan-servais.students-laplateforme.io/matchaTea/index.html" class="mx-auto transform transition-all hover:scale-105 md:mx-0">
+          <img src="assets/img/portfolio-matcha.webp" class="w-full shadow" alt="portfolio image">
+        </a>
+      </div>
+    </div>
+
+
+<!-- précedent avant -->
+    <div class="mt-10 flex justify-between border-t border-lila py-12">
+      <a href="/" class="flex items-center">
+        <i class="bx bx-left-arrow-alt text-2xl text-primary"></i>
+        <span
+          class="block pl-2 font-body text-lg font-bold uppercase text-primary md:pl-5"
+          >Projet précédent</span
+        >
+      </a>
+      <a href="/" class="flex items-center">
+        <span
+          class="block pr-2 font-body text-lg font-bold uppercase text-primary md:pr-5"
+          >Projet suivant</span
+        >
+        <i class="bx bx-right-arrow-alt text-2xl text-primary"></i>
+      </a>
+    </div>
+</div>
+</div>
+
+<!-- Footer -->
+<div class="bg-primary">
+  <div class="container flex flex-col justify-between py-6 sm:flex-row">
+    <p class="text-center font-body text-white md:text-left">
+      © 2022 ATOM. Tous droits réservés.
+    </p>
+    <div class="flex items-center justify-center pt-5 sm:justify-start sm:pt-0">
+      <a href="mailto:ilan.servais@laplateforme.io" class="social-link pl-4">
+        <i class="bx bx-envelope text-2xl text-white hover:text-yellow"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/ilan-servais-036a152b1/" class="social-link pl-4">
+        <i class="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i>
+      </a>
+      <a href="https://github.com/ilan-servais" class="social-link pl-4">
+        <i class="bx bxl-github text-2xl text-white hover:text-yellow"></i>
+      </a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
